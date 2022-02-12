@@ -1,0 +1,7 @@
+@import "../variables/_basic_valiables";
+
+@mixin media($breakpoint){
+    @media #{map-get($breakpoints,$breakpoint)}{
+        @content;
+    }
+}

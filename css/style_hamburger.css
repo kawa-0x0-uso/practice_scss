@@ -1,0 +1,351 @@
+@charset "UTF-8";
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 4rem;
+  background: #006EA5;
+}
+
+.header_logo {
+  background: #fff;
+  width: 10rem;
+}
+
+.header_logo img {
+  width: 100%;
+}
+
+.header_globalmenu {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .header_globalmenu {
+    display: none;
+  }
+}
+
+.header_globalmenu_item {
+  display: flex;
+  height: 100%;
+}
+
+.header_globalmenu_item li {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.header_globalmenu_item li:hover {
+  background: #E6CF00;
+}
+
+.header_hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .header_hamburger {
+    display: block;
+  }
+}
+
+.header_hamburger_button {
+  position: fixed;
+  display: flex;
+  top: 1rem;
+  right: 1rem;
+  background-color: #E6CF00;
+  width: 6rem;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+
+.header_hamburger_button span,
+.header_hamburger_button span::before,
+.header_hamburger_button span::after {
+  display: block;
+  content: '';
+  width: 2.5rem;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+}
+
+.header_hamburger_button span::before {
+  bottom: 8px;
+}
+
+.header_hamburger_button span::after {
+  top: 8px;
+}
+
+.header_hamburger #header_hamburger_check {
+  display: none;
+}
+
+.header_hamburger #header_hamburger_check:checked ~ .header_hamburger_button span {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.header_hamburger #header_hamburger_check:checked ~ .header_hamburger_button span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+.header_hamburger #header_hamburger_check:checked ~ .header_hamburger_button span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.header_hamburger_list {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 80;
+  background-color: #E6CF00;
+  transition: all 0.5s;
+}
+
+.header_hamburger_list ul {
+  padding: 7rem 1rem 0;
+}
+
+.header_hamburger_list ul li {
+  border-bottom: solid 3px #ffffff;
+}
+
+.header_hamburger_list ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+
+.header_hamburger_list ul li a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  right: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -7px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(45deg);
+}
+
+.header_hamburger #header_hamburger_check:checked ~ .header_hamburger_list {
+  left: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  /*Chromeの一部バージョンで発生したバグ対策でremではなくここではem*/
+  background-color: #e9e9e9;
+}
+
+section {
+  display: flex;
+  padding: 2.5rem 2rem;
+  width: 98rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 330px;
+}
+
+.mainContents {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mainContents_card {
+  width: 30%;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.mainContents_card_text {
+  text-align: right;
+}
+
+.mainContents_card_text p {
+  font-size: 12px;
+}
+
+.linkArea {
+  height: 25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.linkArea_contents {
+  width: 660px;
+  display: flex;
+}
+
+.linkArea_contents_button {
+  width: 30rem;
+  height: 5rem;
+  margin: 0 auto;
+  background-color: #006EA5;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.linkArea_contents_button a {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  right: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -7px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+
+.icon_pdf:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  font-size: 1.8rem;
+  content: "";
+  margin-left: 2rem;
+}
+
+.icon_browser:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  font-size: 1.8rem;
+  content: "";
+  margin-left: 2rem;
+}
+
+.mapArea {
+  justify-content: center;
+}
+
+.mapArea_map {
+  width: 35%;
+}
+
+.mapArea_text {
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mapArea_text h2 {
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.mapArea_text p {
+  font-size: 14px;
+}
+
+.mapArea_text a {
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+}
+
+.mapArea_text a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  right: 1.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: -7px;
+  border-color: #006EA5;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+
+.mapArea_text a::before {
+  top: 65%;
+}
+
+.logo {
+  width: 8rem;
+  background-color: #fff;
+}
+
+footer {
+  padding-top: 2.5rem;
+  background-color: #006EA5;
+  color: #fff;
+}
+
+.footer_content {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer_content_category h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer_content_menu {
+  width: 960px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+/*# sourceMappingURL=style_hamburger.css.map */

@@ -1,0 +1,78 @@
+// 基本変数のファイルをインポート
+@import "./variables/_basic_valiables";
+// レスポンシブ用のファイルをインポート
+@import "./components/_responsive";
+@import "./components/_linkIcon";
+@import "./components/_header";
+// @include media(変数){　ここにスタイルを記述 }でレスポンシブが可能
+// @include linkicon(サイズ,色,回転方向)で>の作成が可能
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6em; /*Chromeの一部バージョンで発生したバグ対策でremではなくここではem*/
+    background-color: #e9e9e9;
+}
+
+.breadcrumb{
+    display: flex;
+    &_item a span{
+        position: relative;
+        @include arrow();
+    }
+}
+
+.cardarea{
+    display: flex;
+    margin: 3rem 0;
+    justify-content: space-around;
+    @include media(m){
+        display: block;
+    }
+    &_content{
+        position: relative;
+        width: 20%;
+        background-color: #fff;
+        & img{
+            width: 100%;
+        }
+        &_text{
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-bottom: 7rem;
+            & h1{
+                font-size: $pc_font_M;
+                font-weight: bold;
+                color: $main_color;
+            }
+            & span{
+                font-size: $pc_font_S;
+                color: $font_color;
+            }
+        }
+        &_button{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border: 1px $main_color solid;
+            margin: 1rem;
+            padding: 1rem;
+            box-sizing: content-box;
+            width: 53%;
+        }
+        .first{
+            // @include linkicon(); //初期表示
+            @include arrow($arrow_deg:right); //進化version
+        }
+        .second{
+            @include linkicon(2rem,$main_color,-45deg); //サイズ、カラー、回転方向カスタマイズ
+        }
+        .third{
+            margin-right: 1rem;
+            // @include linkicon($link_color:blue);//　色だけカスタマイズ
+            @include afterIcon("\f1c1",00);
+        }
+    }
+}

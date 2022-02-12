@@ -1,0 +1,33 @@
+// レスポンシブ対応用の変数設定
+$breakpoints:(
+    xs:"only screen and (max-width:320px)",
+    s :"only screen and (max-width:575px)",
+    m :"only screen and (max-width:767px)",
+    l :"only screen and (max-width:991px)",
+    xl:"only screen and (max-width:1199px)",
+);
+
+// サイトカラー関係の変数設定
+// メインカラー
+$main_color : #006EA5;
+// 第二色
+$secondary_color : #E6CF00;
+// テキストカラー
+$font_color : #222;
+
+// フォント関係
+$font_family : "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+// タイトルサイズ
+$pc_font_L : 16px;
+$pc_line_L : 36px;
+$sp_font_L : 18px;
+// 本文サイズ
+$pc_font_M : 14px;
+$sp_font_M : 16px;
+$sp_line_M : 32px;
+// 注釈
+$pc_font_S : 12px;
+$pc_line_S : 26px;
+$sp_font_S : 12px;
+$sp_line_S : 22px;
+

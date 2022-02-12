@@ -1,0 +1,58 @@
+@import "../scss/variables/_0212_variables.scss";
+// パーシャルファイル
+@import "./components/linkIcon";
+@import "./components/0212_linkIcon.scss";
+
+p{
+    color: $main_color;
+    font-size: $font_size;
+    @include link_webIcon('\f1c1',900,3rem,1rem);
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6em; /*Chromeの一部バージョンで発生したバグ対策でremではなくここではem*/
+    background-color: #e9e9e9;
+}
+
+.cardContents{
+    display: flex;
+    justify-content: space-around;
+    &_card{
+        width: 25%;
+        border: 1px solid #444;
+        padding:1rem;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #fff;
+        & img{
+            width: 100%;
+        }
+        &_button{
+            width: 18rem;
+            height: 4rem;
+            line-height: 4rem;
+            margin: 0 auto;
+            padding-left: 3rem;
+            box-sizing: border-box;
+            text-align: left;
+            border: 1px solid #444;
+            & a{
+                color: #333;
+                position:relative;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.cardContents_card_button a{
+    @include linkIcon();
+    &::after{
+        right: -3rem;
+    }
+}

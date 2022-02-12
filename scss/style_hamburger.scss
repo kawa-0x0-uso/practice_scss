@@ -1,0 +1,152 @@
+// 基本変数のファイルをインポート
+@import "./variables/_basic_valiables";
+// レスポンシブ用のファイルをインポート
+@import "./components/_responsive";
+@import "./components/_linkIcon";
+@import "./components/_header";
+// @include media(変数){　ここにスタイルを記述 }でレスポンシブが可能
+// @include linkicon(サイズ,色,回転方向)で>の作成が可能
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6em; /*Chromeの一部バージョンで発生したバグ対策でremではなくここではem*/
+    background-color: #e9e9e9;
+}
+
+section{
+    display: flex;
+    padding: 2.5rem 2rem;
+    width: 98rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+img{
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 330px;
+}
+.mainContents{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    &_card{
+        width: 30%;
+        box-sizing: border-box;
+        padding: 1rem;
+        font-weight: 600;
+        &_text{
+            text-align: right;
+            & p{
+                font-size: $pc_font_S;
+            }
+        }
+    }
+}
+
+.linkArea{
+    height: 25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    &_contents{
+        width: 660px;
+        display: flex;
+        &_button{
+            width: 30rem;
+            height: 5rem;
+            margin: 0 auto;
+            background-color: $main_color;
+            border: 1px solid #333;
+            position: relative;
+            & a{
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.arrow{
+    @include arrow($arrow_color:#fff);
+}
+.icon_pdf{
+    @include afterIcon($content:'\f1c1',$weight:400);
+}
+.icon_browser{
+    @include afterIcon($content:'\f2d2',$weight:400);
+}
+
+.mapArea{
+    justify-content: center;
+    &_map{
+        width: 35%;
+    }
+    &_text{
+        margin-left: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h2{
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+        & p{
+            font-size: $pc_font_M;
+        }
+        & a{
+            @include arrow($arrow_size:0.8rem,$arrow_color:$main_color);
+            position: relative;
+            font-size: $pc_font_S;
+            text-align: center;
+            &::before{
+                top:65%;
+            }
+        }
+    }
+}
+
+.logo{
+    width: 8rem;
+    background-color: #fff;
+}
+
+footer{
+    padding-top: 2.5rem;
+    background-color: $main_color;
+    color: #fff;
+}
+
+.footer_content{
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: $pc_font_M;
+    text-align: center;
+    &_category{
+        & h2{
+            font-size: $pc_font_L;
+            font-weight: 600;
+        }
+    }
+    &_menu{
+        width: 960px;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+}

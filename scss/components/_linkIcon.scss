@@ -1,0 +1,60 @@
+// ざっくり簡単version
+@mixin linkicon($link_size:1rem,$link_color:#333,$rotate:45deg){
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        right: 1.5rem;
+        width: $link_size;
+        height: $link_size;
+        margin-top: -7px;
+        border-top: 3px solid $link_color;
+        border-right: 3px solid $link_color;
+        transform: rotate($rotate);
+    }
+}
+
+// より便利version
+@mixin arrow($arrow_size:1rem,$arrow_bold:1px,$arrow_color:#333,$arrow_deg:right){
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        right: 1.5rem;
+        width: $arrow_size;
+        height: $arrow_size;
+        margin-top: -7px;
+        border-color: $arrow_color;
+        border-style: solid;
+        border-width: 0 $arrow_bold $arrow_bold 0;
+        @if ($arrow_deg == 'left'){
+            transform: rotate(225deg);
+        }
+        @else if ($arrow_deg == 'top'){
+            transform: rotate(-45deg);
+        }
+        @else if ($arrow_deg == 'right'){
+            transform: rotate(45deg);
+        }
+        @else if ($arrow_deg == 'bottom'){
+            transform: rotate(135deg);
+        }
+    }
+}
+
+//　アイコン
+@mixin afterIcon($content,$weight,$size:1.8rem,$margin:2rem) {
+    &:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: $weight;
+        font-size: $size;
+        content: $content;
+        margin-left: $margin;
+    }
+}

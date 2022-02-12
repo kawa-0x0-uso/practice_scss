@@ -1,0 +1,54 @@
+// mixin
+<<<<<<< HEAD
+@mixin linkIcon($linkIcon_size:1rem,$linkIcon_color:#333,$linkIcon_deg:right){
+=======
+@mixin linkIcon(){
+>>>>>>> 8cb21b883c9ff16c5d5aacb81277bc37b2e975b0
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        right: 1.5rem;
+<<<<<<< HEAD
+        width: $linkIcon_size;
+        height: $linkIcon_size;
+        margin-top: -7px;
+        border-top: 3px solid $linkIcon_color;
+        border-right: 3px solid $linkIcon_color;
+        @if ($linkIcon_deg == 'left'){
+            transform: rotate(225deg);
+        }
+        @else if($linkIcon_deg == 'top'){
+            transform: rotate(-45deg);
+        }
+        @else if($linkIcon_deg == 'right'){
+            transform: rotate(45deg);
+        }
+        @else if($linkIcon_deg == 'bottom'){
+            transform: rotate(135deg);
+        }
+    }
+}
+
+@mixin link_webIcon($content,$weight,$size:1.8rem,$left:2rem){
+    &::after{
+        font-family: "Font Awesome 5 Free";
+        content:$content;
+        font-size: $size;
+        font-weight: $weight;
+        margin-left: $left;
+    }
+}
+=======
+        width: 1rem;
+        height: 1rem;
+        margin-top: -7px;
+        border-top: 3px solid #333;
+        border-right: 3px solid #333;
+        transform: rotate(-45deg);
+    }
+}
+>>>>>>> 8cb21b883c9ff16c5d5aacb81277bc37b2e975b0
